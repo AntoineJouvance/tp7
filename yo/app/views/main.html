@@ -1,23 +1,23 @@
-<div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
-</div>
+<div class="row marketing" ng-module="yoApp" ng-controller="MainCtrl">
+  <H2>Récup des personnes </H2>
+  <tr>
+    <td> Liste utilisateurs:
+      <select >
+        <option ng-repeat=" person in persons|filter:name |filter: firstname "> {{person.name}} {{person.firstname}}</option>
+      </select>
+      <h1>Ajout d'une personne </h1>
+      <form ng-submit="addPerson()">
+        <div class="form-group">
+          <label for="firstname">Prénom</label>
+          <input type="text" class="form-control" id="firstname" ng-model="firstname">
+          <label for="name">Nom</label>
+          <input type="text" class="form-control" id="name" ng-model="name">
+          <label for="mail">Mail</label>
+          <input type="text" class="form-control" id="mail" ng-model="mail">
+        </div>
+        <button type="submit" class="btn btn-default">Add Person</button>
+      </form>
+  </tr>
+  </table>
 
-<div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
-
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
-
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
 </div>
